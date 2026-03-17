@@ -51,7 +51,7 @@ Hence $\bigcup_{n=1}^\infty B_n \in \mathcal{G}_A$. ✓ $\blacksquare$
 
 ### Proposition 1.2 — Equivalent conditions for a $\lambda$-system
 
-A collection $\mathcal{L} \subseteq 2^\Omega$ is a $\lambda$-system if and only if it satisfies:
+A collection $\mathcal{L} \subseteq 2^\Omega$ satisfying the **definition** (i.e. closed under complements and pairwise disjoint countable unions, with $\Omega \in \mathcal{L}$) is equivalently characterized by:
 
 1. $\Omega \in \mathcal{L}$,
 2. $B \subseteq A$, $A, B \in \mathcal{L}$ $\Longrightarrow$ $A \setminus B \in \mathcal{L}$,
@@ -88,7 +88,7 @@ Hence $\mathcal{L}$ is both a $\pi$-system and a $\lambda$-system, so $\mathcal{
 Let $(\Omega, \mathcal{F}, \mathbb{P})$ be a probability space and $\mathcal{P}$ a $\pi$-system with $\sigma(\mathcal{P}) = \mathcal{F}$. If $\mathbb{Q}$ is another probability measure on $(\Omega, \mathcal{F})$ with $\mathbb{P}(A) = \mathbb{Q}(A)$ for all $A \in \mathcal{P}$, then $\mathbb{P} = \mathbb{Q}$ on $\mathcal{F}$.
 
 **Proof.**
-Define $\mathcal{L} := \{A \in \mathcal{F} : \mathbb{P}(A) = \mathbb{Q}(A)\}$. One checks that $\mathcal{L}$ is a $\lambda$-system containing $\mathcal{P}$, so $\mathcal{F} = \sigma(\mathcal{P}) = \lambda(\mathcal{P}) \subseteq \mathcal{L}$. $\blacksquare$
+Define $\mathcal{L} := \{A \in \mathcal{F} : \mathbb{P}(A) = \mathbb{Q}(A)\}$. It suffices to show $\mathcal{L}$ is a $\lambda$-system, which is trivial. Then $\mathcal{F} = \sigma(\mathcal{P}) = \lambda(\mathcal{P}) \subseteq \mathcal{L}$. $\blacksquare$
 
 ---
 
@@ -96,8 +96,11 @@ Define $\mathcal{L} := \{A \in \mathcal{F} : \mathbb{P}(A) = \mathbb{Q}(A)\}$. O
 
 - $\mathcal{P} := \{(a,b] : a \le b,\ a,b \in \mathbb{R}\}$ is a $\pi$-system with $\sigma(\mathcal{P}) = \mathcal{B}(\mathbb{R})$.
 - $\mathcal{P} := \{(-\infty, a] : a \in \mathbb{R}\}$ is a $\pi$-system with $\sigma(\mathcal{P}) = \mathcal{B}(\mathbb{R})$.
+- $\mathcal{P} := \mathbb{Q} \cap \mathcal{B}(\mathbb{R})$ is a $\pi$-system with $\sigma(\mathcal{P}) = \mathcal{B}(\mathbb{R})$.
 
 If $\mathbb{P}((-\infty, a]) = \mathbb{Q}((-\infty, a])$ for all $a \in \mathbb{R}$, then $\mathbb{P} = \mathbb{Q}$ on $\mathcal{B}(\mathbb{R})$.
+
+More generally, if $\mathbb{P}$ and $\mathbb{Q}$ agree on $\mathcal{P} = \{\prod_{i=1}^n (-\infty, a_i] : \mathbf{a} \in \mathbb{R}^n\}$, then $\mathbb{P} = \mathbb{Q}$ on $\mathcal{B}(\mathbb{R}^n)$.
 
 ---
 
@@ -142,7 +145,7 @@ $$
 **Proof of (1).**
 
 $$
-\mathbb{P}\!\left(\limsup_n A_n\right) = \mathbb{P}\!\left(\bigcap_{n=1}^\infty \bigcup_{k=n}^\infty A_k\right) = \lim_{n \to \infty} \mathbb{P}\!\left(\bigcup_{k=n}^\infty A_k\right) \le \lim_{n \to \infty} \sum_{k=n}^\infty \mathbb{P}(A_k) = 0,
+\mathbb{P}\!\left(\limsup_n A_n\right) = \lim_{n \to \infty} \mathbb{P}\!\left(\bigcup_{k=n}^\infty A_k\right) \le \lim_{n \to \infty} \sum_{k=n}^\infty \mathbb{P}(A_k) = 0,
 $$
 
 since $\sum_{n=1}^\infty \mathbb{P}(A_n) < \infty$ implies the tail sum $\sum_{k=n}^\infty \mathbb{P}(A_k) \to 0$. $\blacksquare$
@@ -172,18 +175,14 @@ $$
 **Proof.**
 $(\Rightarrow)$ Trivial since $(-\infty, a] \in \mathcal{B}(\mathbb{R})$.
 
-$(\Leftarrow)$ Let $\mathcal{E} := \{B \in \mathcal{B}(\mathbb{R}) : X^{-1}(B) \in \mathcal{F}\}$. By assumption, $(-\infty, a] \in \mathcal{E}$ for all $a \in \mathbb{R}$. Since preimages commute with set operations, $\mathcal{E}$ is a $\sigma$-field. Hence
-
-$$
-\mathcal{B}(\mathbb{R}) = \sigma(\{(-\infty, a] : a \in \mathbb{R}\}) \subseteq \mathcal{E}. \quad \blacksquare
-$$
+$(\Leftarrow)$ Let $\mathcal{E} := \{B \in \mathcal{B}(\mathbb{R}) : X^{-1}(B) \in \mathcal{F}\}$. By assumption, $(-\infty, a] \in \mathcal{E}$ for all $a \in \mathbb{R}$. Since preimages commute with set operations, $\mathcal{E}$ is a $\sigma$-field. Hence $\mathcal{B}(\mathbb{R}) = \sigma(\{(-\infty, a] : a \in \mathbb{R}\}) \subseteq \mathcal{E}$. $\blacksquare$
 
 ---
 
 ### Example 3.3
 
-- $\mathcal{E} := \{(-\infty, a] : a \in \mathbb{R}\}$ is a $\pi$-system and $\sigma(\mathcal{E}) = \mathcal{B}(\mathbb{R})$.
-- $\mathcal{E} := \{(-\infty, a) : a \in \mathbb{R}\}$ is a $\pi$-system and $\sigma(\mathcal{E}) = \mathcal{B}(\mathbb{R})$.
+- $\mathcal{E} := \{(-\infty, a] : a \in \mathbb{R}\}$ is a $\pi$-system with $\sigma(\mathcal{E}) = \mathcal{B}(\mathbb{R})$.
+- $\mathcal{E} := \{(-\infty, a) : a \in \mathbb{R}\}$ is a $\pi$-system with $\sigma(\mathcal{E}) = \mathcal{B}(\mathbb{R})$.
 
 ---
 
@@ -191,65 +190,45 @@ $$
 
 A **random vector** $\mathbf{X} = (X_1, \ldots, X_n) : \Omega \to \mathbb{R}^n$ is measurable if for all $B \in \mathcal{B}(\mathbb{R}^n)$, $\mathbf{X}^{-1}(B) \in \mathcal{F}$.
 
-Define
+Define $\mathcal{B}(\mathbb{R}^n) := \sigma\!\left(\left\{\prod_{i=1}^n (-\infty, a_i] : \mathbf{a} \in \mathbb{R}^n\right\}\right)$.
 
-$$
-\mathcal{B}(\mathbb{R}^n) := \sigma\!\left(\left\{\prod_{i=1}^n (-\infty, a_i] : \mathbf{a} \in \mathbb{R}^n\right\}\right).
-$$
-
-Equivalently, $\mathbf{X}$ is a random vector if and only if
-
-$$
-\bigcap_{i=1}^n \{X_i \le a_i\} \in \mathcal{F} \quad \text{for all } \mathbf{a} \in \mathbb{R}^n.
-$$
+Equivalently, $\mathbf{X}$ is a random vector if and only if $\bigcap_{i=1}^n \{X_i \le a_i\} \in \mathcal{F}$ for all $\mathbf{a} \in \mathbb{R}^n$.
 
 ---
 
 ### Theorem 3.5 — Stability of measurability
 
-Let $X$ and $Y$ be random variables. Then $X + Y$, $X - Y$, and $XY$ are also random variables.
+Let $X$ and $Y$ be random variables. Then $X + Y$, $X - Y$, $XY$, $X \vee Y := \max(X,Y)$, and $X \wedge Y := \min(X,Y)$ are also random variables.
 
 ---
 
 ### Theorem 3.6 — Extended real-valued functions
 
-Let $(X_i)_{i \in I}$ be a collection of r.v.'s on $(\Omega, \mathcal{F})$. Then $\sup_i X_i$, $\inf_i X_i$, $\limsup_i X_i$, and $\liminf_i X_i$ are extended real-valued measurable functions (into $\overline{\mathbb{R}} := [-\infty, \infty]$).
+Let $(X_i)_{i \in I}$ be a collection of r.v.'s on $(\Omega, \mathcal{F})$. Then $\sup_i X_i$, $\inf_i X_i$, $\limsup_i X_i$, $\liminf_i X_i$ are extended real-valued measurable functions into
+
+$$
+\overline{\mathbb{R}} := [-\infty, \infty], \qquad \mathcal{B}(\overline{\mathbb{R}}) := \{B \cup A : B \in \mathcal{B}(\mathbb{R}),\ A \subseteq \{-\infty, \infty\}\}.
+$$
 
 **Proof.**
-For any $a \in \mathbb{R}$,
-
-$$
-\left\{\sup_i X_i \le a\right\} = \bigcap_i \{X_i \le a\} \in \mathcal{F}.
-$$
-
-The cases for $\inf$, $\limsup$, $\liminf$ follow similarly. $\blacksquare$
+For any $a \in \mathbb{R}$, $\left\{\sup_i X_i \le a\right\} = \bigcap_i \{X_i \le a\} \in \mathcal{F}$. The other cases follow similarly. $\blacksquare$
 
 ---
 
 ### Definition 3.7 — Generated $\sigma$-field
 
-For a random variable $X$, the **$\sigma$-field generated by $X$** is
-
-$$
-\sigma(X) := \{X^{-1}(B) : B \in \mathcal{B}(\mathbb{R})\}.
-$$
+For a random variable $X$, the **$\sigma$-field generated by $X$** is $\sigma(X) := \{X^{-1}(B) : B \in \mathcal{B}(\mathbb{R})\}$.
 
 ---
 
 ### Theorem 3.8 — Measurability of compositions
 
-Let $X$ be a random variable and $f : \mathbb{R} \to \mathbb{R}$ measurable. Then $f(X)$ is a random variable. Moreover, $\sigma(f(X)) \subseteq \sigma(X)$.
+Let $X$ be a random variable and $f : \mathbb{R} \to \mathbb{R}$ measurable. Then $f(X)$ is a random variable and $\sigma(f(X)) \subseteq \sigma(X)$.
 
 Conversely, if $Y$ is $\sigma(X)$-measurable, then there exists a measurable $f$ such that $Y = f(X)$.
 
 **Proof.**
-For $B \in \mathcal{B}(\mathbb{R})$:
-
-$$
-(f(X))^{-1}(B) = X^{-1}(f^{-1}(B)) \in \mathcal{F},
-$$
-
-since $f^{-1}(B) \in \mathcal{B}(\mathbb{R})$ by measurability of $f$, and $X^{-1}(f^{-1}(B)) \in \mathcal{F}$ by measurability of $X$. $\blacksquare$
+For $B \in \mathcal{B}(\mathbb{R})$: $(f(X))^{-1}(B) = X^{-1}(f^{-1}(B)) \in \mathcal{F}$. $\blacksquare$
 
 ---
 

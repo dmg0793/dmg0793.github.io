@@ -1,0 +1,103 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+search: false
+---
+
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
+
+/* ============================================================
+   LaTeX tcolorbox 스타일 수학 박스
+   ============================================================ */
+
+:root {
+  --color-thm: #008CDC;
+  --color-def: #00D0FF;
+  --color-ex:  #5A5A5A;
+  --color-rem: #787878;
+  --color-bg:  #FAFAFA;
+}
+
+.math-box {
+  border-style: solid;
+  border-width: 1.5px;
+  border-radius: 0;
+  padding: 0.75rem 1rem;
+  margin: 1.2rem 0;
+  background-color: #ffffff;
+  font-size: 0.97em;
+  line-height: 1.6;
+}
+
+.math-box .math-box-title {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 1em;
+}
+
+.box-theorem,
+.box-lemma,
+.box-proposition,
+.box-corollary {
+  border-color: var(--color-thm);
+  background-color: var(--color-bg);
+}
+
+.box-theorem .math-box-title,
+.box-lemma .math-box-title,
+.box-proposition .math-box-title,
+.box-corollary .math-box-title {
+  color: var(--color-thm);
+}
+
+.box-definition {
+  border-color: var(--color-def);
+  background-color: #ffffff;
+}
+
+.box-definition .math-box-title {
+  color: #00a8cc;
+}
+
+.box-example,
+.box-exercise {
+  border-color: var(--color-ex);
+  background-color: #ffffff;
+}
+
+.box-example .math-box-title,
+.box-exercise .math-box-title {
+  color: var(--color-ex);
+}
+
+.box-remark {
+  border-color: var(--color-rem);
+  background-color: #ffffff;
+}
+
+.box-remark .math-box-title {
+  color: var(--color-rem);
+}
+
+.box-proofidea {
+  border-color: var(--color-rem);
+  background-color: var(--color-bg);
+}
+
+.box-proofidea .math-box-title {
+  color: var(--color-rem);
+}
+
+.math-proof {
+  border-left: 3px solid #cccccc;
+  padding-left: 1rem;
+  margin: 0.8rem 0;
+  color: #333;
+}
+
+.math-proof p:last-child::after {
+  content: " \25A0";
+}

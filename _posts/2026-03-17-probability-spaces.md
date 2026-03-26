@@ -37,83 +37,75 @@ mathjax: true
 
 ## 2. Probability Spaces
 
-### Definition 2.1 — Measure
+<div class="math-box box-definition">
+<span class="math-box-title">Definition 2.1 — Measure</span>
 
 Let $(\Omega, \mathcal{F})$ be a measurable space. A set function $\mu : \mathcal{F} \to [0, \infty]$ is called a **measure** if:
 
 1. $\mu(\varnothing) = 0$,
 2. for any pairwise disjoint sequence $(A_i)_{i=1}^\infty \subseteq \mathcal{F}$ (i.e. $A_i \cap A_j = \varnothing$ for $i \neq j$),
-$$
-\mu\!\left(\bigcup_{i=1}^{\infty} A_i\right) = \sum_{i=1}^{\infty} \mu(A_i).
-$$
 
----
+$$\mu\!\left(\bigcup_{i=1}^{\infty} A_i\right) = \sum_{i=1}^{\infty} \mu(A_i).$$
 
-### Remark 2.2 — Probability measure
+</div>
+
+<div class="math-box box-remark">
+<span class="math-box-title">Remark 2.2 — Probability measure</span>
 
 If $\mu(\Omega) = 1$, we say that $\mu$ is a **probability measure** and denote it by $\mathbb{P}$.
 
----
+</div>
 
-### Definition 2.3 — Probability space
+<div class="math-box box-definition">
+<span class="math-box-title">Definition 2.3 — Probability space</span>
 
 A **probability space** is a triple $(\Omega, \mathcal{F}, \mathbb{P})$, where $(\Omega, \mathcal{F})$ is a measurable space and $\mathbb{P}$ is a probability measure on $\mathcal{F}$.
 
----
+</div>
 
-### Theorem 2.4 — Properties of a probability measure
+<div class="math-box box-theorem">
+<span class="math-box-title">Theorem 2.4 — Properties of a probability measure</span>
 
 Let $(\Omega, \mathcal{F}, \mathbb{P})$ be a probability space. Then:
 
 - **(a) Monotonicity:** if $A \subseteq B$, then $\mathbb{P}(A) \le \mathbb{P}(B)$.
 - **(b) Continuity from below:** if $A_n \uparrow A$ (i.e. $A_n \subseteq A_{n+1}$ and $A = \bigcup_{n=1}^\infty A_n$), then
-$$
-\lim_{n \to \infty} \mathbb{P}(A_n) = \mathbb{P}(A).
-$$
+
+$$\lim_{n \to \infty} \mathbb{P}(A_n) = \mathbb{P}(A).$$
+
+</div>
+
+<div class="math-proof">
 
 **Proof.**
+
 **(a)** Note first that countable additivity implies finite additivity for mutually exclusive events: if $A_1, \dots, A_m \in \mathcal{F}$ are pairwise disjoint, then
 
-$$
-\mathbb{P}\!\left(\bigcup_{i=1}^{m} A_i\right) = \sum_{i=1}^{m} \mathbb{P}(A_i).
-$$
+$$\mathbb{P}\!\left(\bigcup_{i=1}^{m} A_i\right) = \sum_{i=1}^{m} \mathbb{P}(A_i).$$
 
 Now assume $A \subseteq B$. Then $B = A \cup (B \setminus A)$ and $A \cap (B \setminus A) = \varnothing$, hence
 
-$$
-\mathbb{P}(B) = \mathbb{P}(A) + \mathbb{P}(B \setminus A) \ge \mathbb{P}(A).
-$$
+$$\mathbb{P}(B) = \mathbb{P}(A) + \mathbb{P}(B \setminus A) \ge \mathbb{P}(A).$$
 
 **(b)** Assume $A_n \uparrow A$, so $A = \bigcup_{n=1}^\infty A_n$. Define
 
-$$
-B_1 := A_1, \qquad B_n := A_n \setminus \bigcup_{j=1}^{n-1} A_j \quad (n \ge 2).
-$$
+$$B_1 := A_1, \qquad B_n := A_n \setminus \bigcup_{j=1}^{n-1} A_j \quad (n \ge 2).$$
 
-Then $B_n \in \mathcal{F}$ are pairwise disjoint and $\bigcup_{n=1}^\infty B_n = \bigcup_{n=1}^\infty A_n = A$. Also, for each $n$,
+Then $B_n \in \mathcal{F}$ are pairwise disjoint and $\bigcup_{n=1}^\infty B_n = A$. Also, $A_n = \bigcup_{k=1}^{n} B_k$. Therefore,
 
-$$
-A_n = \bigcup_{k=1}^{n} B_k.
-$$
-
-Therefore,
-
-$$
-\mathbb{P}(A) = \mathbb{P}\!\left(\bigcup_{k=1}^\infty B_k\right) = \sum_{k=1}^\infty \mathbb{P}(B_k), \qquad \mathbb{P}(A_n) = \mathbb{P}\!\left(\bigcup_{k=1}^{n} B_k\right) = \sum_{k=1}^{n} \mathbb{P}(B_k).
-$$
+$$\mathbb{P}(A) = \sum_{k=1}^\infty \mathbb{P}(B_k), \qquad \mathbb{P}(A_n) = \sum_{k=1}^{n} \mathbb{P}(B_k).$$
 
 Taking $n \to \infty$ gives
 
-$$
-\lim_{n \to \infty} \mathbb{P}(A_n) = \lim_{n \to \infty} \sum_{k=1}^{n} \mathbb{P}(B_k) = \sum_{k=1}^\infty \mathbb{P}(B_k) = \mathbb{P}(A). \quad \blacksquare
-$$
+$$\lim_{n \to \infty} \mathbb{P}(A_n) = \sum_{k=1}^\infty \mathbb{P}(B_k) = \mathbb{P}(A). \quad \blacksquare$$
 
----
+</div>
 
-### Remark 2.5 — Continuity from above
+<div class="math-box box-remark">
+<span class="math-box-title">Remark 2.5 — Continuity from above</span>
 
 If $A_n \downarrow A$, then
 
-$$
-\lim_{n \to \infty} \mathbb{P}(A_n) = \mathbb{P}(A).
-$$
+$$\lim_{n \to \infty} \mathbb{P}(A_n) = \mathbb{P}(A).$$
+
+</div>

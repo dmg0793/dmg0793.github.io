@@ -64,7 +64,7 @@ A collection $\mathcal{F}$ of subsets of a nonempty set $\Omega$ is a $\pi$-syst
 
 </div>
 
-<div class="math-proof">
+<div class="math-proof" markdown="1">
 
 **Proof.**
 
@@ -93,7 +93,7 @@ Then $\mathcal{G}_A$ is also a $\lambda$-system for every $A \in \mathcal{L}$.
 
 </div>
 
-<div class="math-proof">
+<div class="math-proof" markdown="1">
 
 **Proof.** We verify the following three properties.
 
@@ -120,7 +120,7 @@ Let $\mathcal{P}$ be a $\pi$-system. If $\mathcal{P} \subseteq \mathcal{L}$ wher
 
 </div>
 
-<div class="math-proof">
+<div class="math-proof" markdown="1">
 
 **Proof.** Let $\lambda(\mathcal{P})$ be the smallest $\lambda$-system containing $\mathcal{P}$. For any $A \in \mathcal{P}$ and $B \in \mathcal{P}$, since $\mathcal{P}$ is a $\pi$-system, $A \cap B \in \mathcal{P} \subseteq \lambda(\mathcal{P})$, so $B \in \mathcal{G}_A$.
 

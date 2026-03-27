@@ -16,6 +16,7 @@ twitter_username: ""
 github_username: ""
 minimal_mistakes_skin: default
 search: true
+powered_by: false
 
 # Build settings
 markdown: kramdown

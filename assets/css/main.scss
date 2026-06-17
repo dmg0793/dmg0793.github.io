@@ -16,67 +16,66 @@ search: false
   --color-def: #82C4A4;
   --color-ex:  #6E6E6E;
   --color-rem: #6E6E6E;
-  --color-bg:  #ffffff;
+  --color-bg:  #FAFAFA;
 }
 
 .math-box {
   border-style: solid;
   border-width: 1.5px;
   border-radius: 0;
-  padding: 0 1rem 0.75rem;
+  padding: 0.75rem 1rem;
   margin: 1.2rem 0;
   background-color: #ffffff;
   font-size: 0.97em;
   line-height: 1.6;
-  overflow: hidden;
 }
 
 .math-box .math-box-title {
   display: block;
   font-weight: 700;
-  margin: 0 -1rem 0.75rem;
-  padding: 0.4rem 1rem;
+  margin-bottom: 0.5rem;
   font-size: 1em;
-  color: #1a1a1a;
 }
 
 .box-theorem, .box-lemma, .box-proposition, .box-corollary {
   border-color: var(--color-thm);
+  background-color: var(--color-bg);
 }
 .box-theorem .math-box-title, .box-lemma .math-box-title,
 .box-proposition .math-box-title, .box-corollary .math-box-title {
-  background-color: var(--color-thm);
+  color: var(--color-thm);
 }
 
 .box-definition {
   border-color: var(--color-def);
+  background-color: #ffffff;
 }
 .box-definition .math-box-title {
-  background-color: var(--color-def);
+  color: var(--color-def);
 }
 
 .box-example, .box-exercise {
   border-color: var(--color-ex);
+  background-color: #ffffff;
 }
 .box-example .math-box-title, .box-exercise .math-box-title {
-  background-color: var(--color-ex);
-  color: #ffffff;
+  color: var(--color-ex);
 }
 
 .box-remark {
   border-color: var(--color-rem);
+  background-color: #ffffff;
 }
 .box-remark .math-box-title {
-  background-color: var(--color-rem);
-  color: #ffffff;
+  color: var(--color-rem);
 }
 
 .box-proofidea {
   border-color: var(--color-rem);
+  background-color: var(--color-bg);
 }
 .box-proofidea .math-box-title {
-  background-color: var(--color-rem);
-  color: #ffffff;
+  color: var(--color-rem);
 }
 
 .math-proof {

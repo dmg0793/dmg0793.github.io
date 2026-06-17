@@ -11,3 +11,28 @@ MathJax = {
 };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+// Shrink long display equations so they fit inside .math-box without overflowing.
+(function () {
+  function fitBoxMath() {
+    document.querySelectorAll('.math-box').forEach(function (box) {
+      var avail = box.clientWidth
+        - parseFloat(getComputedStyle(box).paddingLeft)
+        - parseFloat(getComputedStyle(box).paddingRight);
+      box.querySelectorAll('mjx-container[display="true"]').forEach(function (mjx) {
+        mjx.style.fontSize = '';
+        var natural = mjx.scrollWidth;
+        if (natural > avail && avail > 0) {
+          var scale = avail / natural;
+          if (scale < 0.5) scale = 0.5;
+          mjx.style.fontSize = (scale * 100).toFixed(1) + '%';
+        }
+      });
+    });
+  }
+  function run() { if (window.MathJax && MathJax.startup && MathJax.startup.promise) { MathJax.startup.promise.then(fitBoxMath); } else { fitBoxMath(); } }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', run); } else { run(); }
+  var t;
+  window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(fitBoxMath, 150); });
+})();
+</script>

@@ -37,6 +37,19 @@ search: false
   font-size: 1em;
 }
 
+/* Long display equations should scroll inside the box, not spill out */
+.math-box mjx-container[display="true"] {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+.math-box .katex-display,
+.math-box .MathJax_Display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
 .box-theorem, .box-lemma, .box-proposition, .box-corollary {
   border-color: var(--color-thm);
   background-color: var(--color-bg);

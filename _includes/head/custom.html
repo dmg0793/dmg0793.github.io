@@ -36,3 +36,20 @@ MathJax = {
   window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(fitBoxMath, 150); });
 })();
 </script>
+
+
+{% if page.categories contains "Probability Theory" %}
+<style>
+  :root {
+      --color-thm: #008CDC;
+      --color-def: #00D0FF;
+      --color-ex:  #5A5A5A;
+      --color-rem: #787878;
+      --color-bg:  #FAFAFA;
+  }
+  .box-definition .math-box-title {
+      color: #00a8cc;
+  }
+  </style>
+{% endif %}
+</style>

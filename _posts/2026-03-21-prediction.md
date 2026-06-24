@@ -24,7 +24,7 @@ mathjax: true
 
 | Symbol | Meaning |
 |--------|---------|
-| $\text{MSPE}(g) = \mathbb{E}[|Y - g(X)|^2]$ | Mean squared prediction error |
+| $\text{MSPE}(g) = \mathbb{E}[\lvert Y - g(X)\rvert^2]$ | Mean squared prediction error |
 | $\mu_L(X)$ | Best linear predictor of $Y$ given $X$ |
 | $\rho_{XY}$ | Multiple correlation coefficient |
 | $\Sigma_{XX}, \Sigma_{XY}, \Sigma_{YX}, \Sigma_{YY}$ | Block covariance matrices |
@@ -61,7 +61,7 @@ $$\mathbb{E}[Y \mid X] = \arg\min_{g \in L^2} \mathbb{E}(Y - g(X))^2.$$
 
 </div>
 
-<strong>Proof.</strong> Write $g^*(x) = \mathbb{E}[Y \mid X = x]$. The orthogonality $\mathbb{E}[(Y - g^*(X))g(X)] = \mathbb{E}[g(X)\cdot 0] = 0$ follows from the tower property. Then
+<strong>Proof.</strong> Write $g^\ast(x) = \mathbb{E}[Y \mid X = x]$. The orthogonality $\mathbb{E}[(Y - g^\ast(X))g(X)] = \mathbb{E}[g(X)\cdot 0] = 0$ follows from the tower property. Then
 
 $$\text{MSPE}(g) = \mathbb{E}[(Y - g^*(X))^2] + \mathbb{E}[(g^*(X) - g(X))^2] \geq \text{MSPE}(g^*),$$
 

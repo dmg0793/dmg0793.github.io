@@ -144,7 +144,7 @@ Let $X \sim F$.
 
 $$L(a) = \mathbb{E}[(X-\mu)^2] + (\mu - a)^2 \geq L(\mu),$$
 
-with equality iff $a = \mu$. For (ii), if $\mathbb{E}|X| = \infty$ then $L \equiv \infty$; otherwise the convexity inequality
+with equality iff $a = \mu$. For (ii), if $\mathbb{E}\lvert X\rvert = \infty$ then $L \equiv \infty$; otherwise the convexity inequality
 
 $$\rho_\tau(x-b) \geq \rho_\tau(x-a) + \mathbb{I}(x \geq a)\,\tau(a-b) + \mathbb{I}(x < a)(\tau-1)(a-b)$$
 

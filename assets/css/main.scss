@@ -39,7 +39,7 @@ search: false
 
 .box-theorem, .box-lemma, .box-proposition, .box-corollary {
   border-color: var(--color-thm);
-  background-color: var(--color-bg);
+  background-color: transparent;
 }
 .box-theorem .math-box-title, .box-lemma .math-box-title,
 .box-proposition .math-box-title, .box-corollary .math-box-title {
